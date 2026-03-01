@@ -1,3 +1,4 @@
+#include <iostream>
 #include <jni.h>
 #include "interop.hh"
 #include "SkBlender.h"
@@ -9,8 +10,3 @@ extern "C" JNIEXPORT jlong JNICALL Java_org_jetbrains_skia_BlenderKt__1nMakeArit
     return reinterpret_cast<jlong>(ptr);
 }
 
-extern "C" JNIEXPORT jlong JNICALL Java_org_jetbrains_skia_BlenderKt__1nMakeMode
-  (JNIEnv* env, jclass jclass, jint mode) {
-    SkBlender* ptr = SkBlender::Mode(static_cast<SkBlendMode>(mode)).release();
-    return reinterpret_cast<jlong>(ptr);
-}

@@ -448,17 +448,14 @@ class Paint : Managed {
         }
 
     /**
-     * Returns the user-supplied blend function, if one has been set.
+     * @param blender  how geometry is filled with color; if null, color is used instead
      *
-     * A null blender signifies the default SrcOver behavior.
+     * @see [https://fiddle.skia.org/c/@Color_Filter_Methods](https://fiddle.skia.org/c/@Color_Filter_Methods)
      *
-     * For convenience, you can call [blendMode] if the blend effect can be expressed
-     * as one of those values.
+     * @see [https://fiddle.skia.org/c/@Paint_setShader](https://fiddle.skia.org/c/@Paint_setShader)
      *
-     * @see [https://fiddle.skia.org/c/@Paint_setBlender](https://fiddle.skia.org/c/@Paint_setBlender)
-     * @see [https://fiddle.skia.org/c/@Paint_refBlender](https://fiddle.skia.org/c/@Paint_refBlender)
-     *
-     * @return  the [Blender] assigned to this paint, otherwise null
+     * @return  [Shader] or null
+     * @see [https://fiddle.skia.org/c/@Paint_refShader](https://fiddle.skia.org/c/@Paint_refShader)
      */
     var blender: Blender?
         get() = try {
@@ -698,7 +695,7 @@ private external fun _nSetImageFilter(ptr: NativePointer, filterPtr: NativePoint
 private external fun _nGetBlender(ptr: NativePointer): NativePointer
 
 @ExternalSymbolName("org_jetbrains_skia_Paint__1nSetBlender")
-private external fun _nSetBlender(ptr: NativePointer, blenderPtr: NativePointer)
+private external fun _nSetBlender(ptr: NativePointer, shaderPtr: NativePointer)
 
 @ExternalSymbolName("org_jetbrains_skia_Paint__1nHasNothingToDraw")
 private external fun _nHasNothingToDraw(ptr: NativePointer): Boolean

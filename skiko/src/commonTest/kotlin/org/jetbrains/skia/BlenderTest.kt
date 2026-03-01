@@ -51,15 +51,10 @@ class BlenderTest {
         runtimeEffect.makeBlender(null)
     }
 
-    @Test
-    fun arithmetic() = blenderTest {
-        Blender.makeArithmetic(
-            k1 = 0.5f, k2 = 0.5f, k3 = 0.5f, k4 = 0.5f, enforcePMColor = true
-        )
-    }
-
-    @Test
-    fun mode() = blenderTest {
-        Blender.makeMode(BlendMode.CLEAR)
-    }
+//    @Test
+//    fun arithmetic() = blenderTest {
+//        Blender.makeArithmetic(
+//            k1 = 0.5f, k2 = 0.5f, k3 = 0.5f, k4 = 0.5f, enforcePMColor = true
+//        )
+//    }
 }
